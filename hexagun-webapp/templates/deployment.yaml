@@ -15,3 +15,10 @@ spec:
             containers:
             - name: webapp
               image: morettimathieu/hexagun:4
+              volumeMounts:
+              - name: webapp-config-volume
+                mountPath: /config
+            volumes:
+            - name: webapp-config-volume
+              configMap: 
+                name: webapp-config-v1
