@@ -4,4 +4,4 @@ metadata:
     name: webapp-config-v1
 data:
     config.yaml: |
-        webapp.port: 8082
+        webapp.port: {{ default "8081" .Values.webapp.port }}
