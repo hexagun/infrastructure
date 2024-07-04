@@ -1,0 +1,7 @@
+webapp:
+  port: 8085
+  nodePort: 30085
+  image:
+    repository: "morettimathieu/hexagun"
+    # tag: "3-prod"
+    tagLabel: 3-prod

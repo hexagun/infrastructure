@@ -5,8 +5,9 @@ pipeline {
     environment {
         // Define environment variables
         CHART_NAME = 'hexagun-webapp' // Name of the Helm chart
-        DEV_NAMESPACE = 'dev' // Namespace for development environment
-        STAGING_NAMESPACE = 'staging' // Namespace for staging environment
+        DEV_NAMESPACE = 'dev' // Namespace for development environment        
+        STAGING_NAMESPACE = 'staging' // Namespace for staging environment        
+        PROD_NAMESPACE = 'prod' // Namespace for prod environment
     }
 
     stages {
@@ -30,9 +31,25 @@ pipeline {
             }
             steps {
                 container('helm-runner') {
-                    // Deploy to development environment using Helm
-                    sh "helm ls -aA"
-                    sh "helm upgrade --install ${CHART_NAME} ./${CHART_NAME} --namespace ${DEV_NAMESPACE}"
+                    script {
+                        if (env.BRANCH_NAME == 'main') {
+                            // Deploy to prod environment using Helm
+                            sh "helm ls -aA"
+                            sh "helm upgrade --install ${CHART_NAME} ./${CHART_NAME} --namespace ${PROD_NAMESPACE} --values ./values-prod.yaml"
+                        } else if (env.BRANCH_NAME =~ /^staging.*/ ) {
+                            // Deploy to staging environment using Helm
+                            sh "helm ls -aA"
+                            sh "helm upgrade --install ${CHART_NAME} ./${CHART_NAME} --namespace ${STAGING_NAMESPACE} --values ./values-staging.yaml"
+                        } else if (env.BRANCH_NAME =~ /^dev.*/ ) {
+                            // Deploy to development environment using Helm
+                            sh "helm ls -aA"
+                            sh "helm upgrade --install ${CHART_NAME} ./${CHART_NAME} --namespace ${DEV_NAMESPACE} --values ./values-dev.yaml"
+                        } else {
+                            // Generate template
+                            sh "helm ls -aA"
+                            sh "helm template ./${CHART_NAME}"
+                        }
+                    }
                 }
             }
         }
