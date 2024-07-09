@@ -1,3 +1,5 @@
+environment: "staging"
+
 webapp:
   port: 8085
   nodePort: 30085

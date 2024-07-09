@@ -21,4 +21,4 @@ spec:
             volumes:
             - name: webapp-config-volume
               configMap: 
-                name: webapp-config-v1
+                name: webapp-config-v2
