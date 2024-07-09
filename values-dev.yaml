@@ -1,3 +1,5 @@
+environment: "dev"
+
 webapp:
   port: 8082
   nodePort: 30082

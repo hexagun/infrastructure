@@ -1,3 +1,5 @@
+environment: "prod"
+
 webapp:
   port: 8088
   nodePort: 30088
