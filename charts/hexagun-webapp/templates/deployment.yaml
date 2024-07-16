@@ -14,7 +14,7 @@ spec:
         spec:
             containers:
             - name: webapp
-              image: "{{ .Values.webapp.image.repository }}:{{ .Values.webapp.image.tagLabel }}"
+              image: "{{ .Values.image.repository }}:{{ .Values.image.tagLabel }}"
               volumeMounts:
               - name: webapp-config-volume
                 mountPath: /config

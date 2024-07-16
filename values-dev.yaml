@@ -1,6 +1,7 @@
-environment: "dev"
+global:
+  environment: "dev"
 
-webapp:
+hexagun-webapp:
   port: 8082
   nodePort: 30082
   image:

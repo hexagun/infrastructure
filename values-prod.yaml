@@ -1,6 +1,7 @@
-environment: "prod"
+global:
+  environment: "prod"
 
-webapp:
+heagun-webapp:
   port: 8088
   nodePort: 30088
   image:
