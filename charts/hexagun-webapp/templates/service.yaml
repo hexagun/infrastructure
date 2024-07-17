@@ -8,6 +8,6 @@ spec:
     
     ports:
     - name: http
-      port: {{ default "8081" .Values.webapp.port }}
-      nodePort: {{ default "30081" .Values.webapp.nodePort }}
+      port: {{ default "8081" .Values.port }}
+      nodePort: {{ default "30081" .Values.nodePort }}
     type: NodePort

@@ -1,6 +1,7 @@
-environment: "staging"
+global:
+  environment: "staging"
 
-webapp:
+heagun-webapp:
   port: 8085
   nodePort: 30085
   image:

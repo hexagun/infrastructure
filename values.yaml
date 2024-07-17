@@ -1,6 +1,10 @@
-environment: ""
 
-webapp:
+global:
+  environment: ""
+  image:
+    repository: "morettimathieu"
+
+heagun-webapp:
   port: 8081
   nodePort: 30081
   image:
