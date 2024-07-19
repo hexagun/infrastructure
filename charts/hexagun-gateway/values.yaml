@@ -1,0 +1,6 @@
+port: 8091
+nodePort: 30091
+image:
+  repository: "morettimathieu/hexagun-gateway"
+  # tag: "3-prod"
+  tagLabel: 3-prod

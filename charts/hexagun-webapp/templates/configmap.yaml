@@ -5,4 +5,4 @@ metadata:
 data:
     config.yaml: |
         environment: {{ default "none" .Values.global.environment }}
-        webapp.port: {{ default "8081" .Values.port }}
+        webapp.port: {{ default "8081" .Values.global.webapp.port }}

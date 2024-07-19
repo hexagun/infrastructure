@@ -1,10 +1,20 @@
 global:
   environment: "staging"
+  image:
+    repository: "morettimathieu"
+  webapp:
+    url: "hexagun-webapp"
+    port: 8085
 
 hexagun-webapp:
-  port: 8085
   nodePort: 30085
   image:
     repository: "morettimathieu/hexagun"
-    # tag: "3-prod"
+    tagLabel: 4-prod
+
+hexagun-gateway:
+  port: 8095
+  nodePort: 30095
+  image:
+    repository: "morettimathieu/hexagun-gateway"
     tagLabel: 4-prod
