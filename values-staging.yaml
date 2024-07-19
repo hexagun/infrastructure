@@ -7,4 +7,4 @@ hexagun-webapp:
   image:
     repository: "morettimathieu/hexagun"
     # tag: "3-prod"
-    tagLabel: 3-prod
+    tagLabel: 4-prod
