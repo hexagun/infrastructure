@@ -3,7 +3,7 @@ global:
   image:
     repository: "morettimathieu"
   webapp:
-    url: "http://hexagun-webapp.dev.svc"
+    url: "http://hexagun-webapp"
     port: 8082
 
 hexagun-webapp:
@@ -17,4 +17,4 @@ hexagun-gateway:
   nodePort: 30092
   image:
     repository: "morettimathieu/hexagun-gateway"
-    tagLabel: 0.0.1-g9cfca926
+    tagLabel: 0.0.1-ge876cfd2
