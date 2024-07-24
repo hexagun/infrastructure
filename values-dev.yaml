@@ -17,4 +17,4 @@ hexagun-gateway:
   nodePort: 30092
   image:
     repository: "morettimathieu/hexagun-gateway"
-    tagLabel: 0.0.1-ge876cfd2
+    tagLabel: 0.0.1-g8de836ac
