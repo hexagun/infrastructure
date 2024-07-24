@@ -3,7 +3,7 @@ global:
   image:
     repository: "morettimathieu"
   webapp:
-    url: "http://hexagun-webapp"
+    url: "hexagun-webapp"
     port: 8082
 
 hexagun-webapp:
