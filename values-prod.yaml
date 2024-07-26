@@ -1,10 +1,20 @@
 global:
   environment: "prod"
+  image:
+    repository: "morettimathieu"
+  webapp:
+    url: "hexagun-webapp.prod.svc.cluster.local"
+    port: 8088
 
 hexagun-webapp:
-  port: 8088
   nodePort: 30088
   image:
     repository: "morettimathieu/hexagun"
-    # tag: "3-prod"
+    tagLabel: 4-prod
+
+hexagun-gateway:
+  port: 8098
+  nodePort: 30098
+  image:
+    repository: "morettimathieu/hexagun-gateway"
     tagLabel: 4-prod

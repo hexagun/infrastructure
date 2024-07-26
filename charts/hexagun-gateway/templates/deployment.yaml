@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: gateway
+spec:
+    selector:
+        matchLabels:
+            app: gateway
+    replicas: 1
+    template: # template for the pods
+        metadata:
+            labels:
+                app: gateway
+        spec:
+            containers:
+            - name: gateway
+              image: "{{ .Values.image.repository }}:{{ .Values.image.tagLabel }}"
+              volumeMounts:
+              - name: gateway-config-volume
+                mountPath: /config
+            volumes:
+            - name: gateway-config-volume
+              configMap: 
+                name: gateway-config-v1

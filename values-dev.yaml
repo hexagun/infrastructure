@@ -1,10 +1,20 @@
 global:
   environment: "dev"
+  image:
+    repository: "morettimathieu"
+  webapp:
+    url: "hexagun-webapp"
+    port: 8082
 
 hexagun-webapp:
-  port: 8082
   nodePort: 30082
   image:
     repository: "morettimathieu/hexagun"
-    # tag: "3-prod"
     tagLabel: 0.0.2-gffb5afc6
+
+hexagun-gateway:
+  port: 8092
+  nodePort: 30092
+  image:
+    repository: "morettimathieu/hexagun-gateway"
+    tagLabel: 0.0.1-g8de836ac

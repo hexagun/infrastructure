@@ -2,10 +2,14 @@ apiVersion: v2
 name: hexagun
 description: A Helm umbrella chart for the hexagun product
 type: application
-version: 0.1.0
+version: 0.2.0
 appVersion: "1.0"
 
 dependencies:
   - name: hexagun-webapp
-    version: 0.4.0
+    version: 0.4.1
     repository: "file://charts/hexagun-webapp"
+
+  - name: hexagun-gateway
+    version: 0.1.0
+    repository: "file://charts/hexagun-gateway"
