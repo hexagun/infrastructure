@@ -3,7 +3,7 @@ global:
   image:
     repository: "morettimathieu"
   webapp:
-    url: "http://hexagun-webapp.default.svc.cluster.local"
+    url: "hexagun-webapp"
     port: 8081
 
 hexagun-webapp:
