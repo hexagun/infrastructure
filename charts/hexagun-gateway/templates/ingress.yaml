@@ -1,3 +1,4 @@
+{{- if ne .Release.Namespace "dev" }}
 # ngrok Ingress Controller Configuration
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -20,3 +21,4 @@ spec:
                 name: hexagun-gateway
                 port:
                   number: {{ default "8091" .Values.port }}
+{{- end }}
