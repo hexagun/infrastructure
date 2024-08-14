@@ -10,7 +10,7 @@ hexagun-webapp:
   nodePort: 30082
   image:
     repository: "morettimathieu/hexagun"
-    tagLabel: 0.1.0-g6f65dc5d
+    tagLabel: 0.2.1-g1a25c6b3 
 
 hexagun-gateway:
   port: 8092
