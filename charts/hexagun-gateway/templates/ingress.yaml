@@ -4,10 +4,14 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: gateway-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
 spec:
-  ingressClassName: ngrok
+  ingressClassName: nginx
   rules:
-    - host: happily-wealthy-hound.ngrok-free.app
+    - host: hex-a-gun.com
       http:
         paths:
           {{- if eq .Release.Namespace "prod" }}
