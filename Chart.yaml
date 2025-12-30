@@ -11,5 +11,5 @@ dependencies:
     repository: "file://charts/hexagun-webapp"
 
   - name: hexagun-gateway
-    version: 0.3.1
+    version: 0.3.2
     repository: "file://charts/hexagun-gateway"
